@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import SearchBar from "./SearchBar";
+import Logo from "./Logo";
+import UserProfile from "./UserProfile";
 
 const Head = () => {
-  return (
-    <div>Head</div>
-  )
-}
 
-export default Head
+  return (
+    <div className="flex justify-between items-center shadow-md p-4 px-10">
+      <Logo />
+      <SearchBar />
+      <UserProfile />
+    </div>
+  );
+};
+
+export default Head;
