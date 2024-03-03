@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faHome } from "@fortawesome/free-solid-svg-icons";
 const Slidebar = () => {
@@ -11,7 +12,10 @@ const Slidebar = () => {
   return (
     <div className="col-span-1 shadow-md  border-r flex flex-col gap-3 p-4 ">
       <ul>
-        <li>Home</li>
+        <Link to={"/"}>
+          <li>Home</li>
+        </Link>
+
         <li>Shorts</li>
         <li>Videos</li>
         <li>Live</li>

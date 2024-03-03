@@ -9,7 +9,7 @@ function useYoutubeVideoAPI() {
     const getData = async () => {
       try {
         const data = await fetchAPI(YOUTUBE_API_URL);
-        setVideoData(data);
+        setVideoData(data["items"]);
       } catch (err) {
         console.log(err);
       }
