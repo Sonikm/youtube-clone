@@ -5,6 +5,8 @@ import useSearchVideo from "../hooks/useSearchVideo";
 import AutoSuggestions from "./AutoSuggestions";
 
 function SearchBar() {
+  // as soon as my state variable is changes, it quickly trigered the riconsilisation process once agian and it's destroying the components and creating once again
+
   const [query, setQuery] = useState("");
   const { searchVideo } = useSearchVideo(query);
 
@@ -31,8 +33,8 @@ function SearchBar() {
           <img src={micIcon} alt="mic" />
         </button>
       </div>
-        
-        <AutoSuggestions searchVideo={searchVideo}/>
+
+      <AutoSuggestions searchVideo={searchVideo} />
     </div>
   );
 }
