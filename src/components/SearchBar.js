@@ -1,27 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import micIcon from "../assets/mic.svg";
 import searchIcon from "../assets/search-icon.svg";
 import useSearchVideo from "../hooks/useSearchVideo";
 import AutoSuggestions from "./AutoSuggestions";
+import { useDispatch } from "react-redux";
+import {
+  autoSearchSuggetions,
+} from "../utils/appSlice";
 
 function SearchBar() {
-  // as soon as my state variable is changes, it quickly trigered the riconsilisation process once agian and it's destroying the components and creating once again
+  // as soon as my state variable is chasnges, it quickly trigered the reconsilisation process once agian and it's destroying the components and creating once again
 
   const [query, setQuery] = useState("");
   const { searchVideo } = useSearchVideo(query);
+  const dispatch = useDispatch();
+
 
   function handleSearchQuery(value) {
     setQuery(value);
   }
 
-  console.log(searchVideo);
-
   return (
     <div className=" relative  p-2 ">
       <div className="flex justify-center items-center">
         <input
+          onBlur={() => dispatch(autoSearchSuggetions(false))}
+          onFocus={() => dispatch(autoSearchSuggetions(true))}
           value={query}
-          className="border font-semibold rounded-3xl p-2 pl-4 w-[500px] placeholder:text-gray-500 border-gray-300 placeholder:font-medium outline-0 "
+          className="border font-semibold rounded-3xl p-2 pl-4 w-[500px] placeholder:text-gray-500 border-gray-300 placeholder:font-medium outline-1 "
           type="text"
           placeholder="Search"
           onChange={(e) => handleSearchQuery(e.target.value)}
@@ -33,7 +39,6 @@ function SearchBar() {
           <img src={micIcon} alt="mic" />
         </button>
       </div>
-
       <AutoSuggestions searchVideo={searchVideo} />
     </div>
   );
