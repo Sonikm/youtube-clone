@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import fetchAPI from "../utils/fetchAPI";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { casheResults } from "../utils/searchSlice";
 
 export default function useSearchVideo(query) {
   
   const [searchVideo, setSearchVideo] = useState([]);
-
+  const dispatch = useDispatch();
+  const searchCache = useSelector(store => store.search);
+ 
   useEffect(() => {
     //* DEBOUNCING
     // API call
@@ -14,10 +18,19 @@ export default function useSearchVideo(query) {
     // but if the difference between 2 API calls is <200ms
     // decline the API call
 
-    const timer = setTimeout(() => getData(), 200);
+    const timer = setTimeout(() => {
+      if(searchCache[query]){
+          setSearchVideo(searchCache[query]);
+      }
+      else{
+        getData();
+       
+      }
+      
+    }, 200);
 
     return () => clearTimeout(timer);
-  }, [query]);
+  }, [query, searchCache]);
 
   /**
    *  key - i
@@ -40,6 +53,9 @@ export default function useSearchVideo(query) {
     try {
       const data = await fetchAPI(YOUTUBE_SEARCH_API + query);
       setSearchVideo(data[1]);
+      dispatch(casheResults({
+        [query]: data[1]
+      }));
     } catch (err) {
       console.log(err);
     }

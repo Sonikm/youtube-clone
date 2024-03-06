@@ -15,7 +15,6 @@ function SearchBar() {
   const { searchVideo } = useSearchVideo(query);
   const dispatch = useDispatch();
 
-
   function handleSearchQuery(value) {
     setQuery(value);
   }

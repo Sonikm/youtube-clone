@@ -6,7 +6,6 @@ function VideoContainer() {
   const { videoData } = useYoutubeVideoAPI();
 
   if (videoData == null) return;
-  console.log(videoData);
 
   return (
     <div className="flex flex-wrap justify-between p-6">
