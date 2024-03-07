@@ -4,7 +4,7 @@ import userProfile from "../assets/user-profile.svg";
 function UserProfile() {
   return (
     <div>
-    <img className="w-8" src={userProfile} alt="user" />
+    <img className="w-6" src={userProfile} alt="user" />
   </div>
   )
 }

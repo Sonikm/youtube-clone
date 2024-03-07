@@ -5,11 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { casheResults } from "../utils/searchSlice";
 
 export default function useSearchVideo(query) {
-  
   const [searchVideo, setSearchVideo] = useState([]);
   const dispatch = useDispatch();
-  const searchCache = useSelector(store => store.search);
- 
+  const searchCache = useSelector((store) => store.search);
+
   useEffect(() => {
     //* DEBOUNCING
     // API call
@@ -19,47 +18,49 @@ export default function useSearchVideo(query) {
     // decline the API call
 
     const timer = setTimeout(() => {
-      if(searchCache[query]){
-          setSearchVideo(searchCache[query]);
-      }
-      else{
+      if (searchCache[query]) {
+        setSearchVideo(searchCache[query]);
+      } else {
         getData();
-       
       }
-      
     }, 200);
 
     return () => clearTimeout(timer);
   }, [query, searchCache]);
 
-  /**
-   *  key - i
-   *   - render the component
-   *   - useEffect();
-   *   - start the timer => make API call after 200 ms
-   *
-   *  key - ip
-   *   - reconsilisation is started
-   *   - destroy the component(useEffect return method -> clearTimeout)
-   *   - clears the thing up
-   *   - re-render the component
-   *   - call the useEffect() again
-   *   - start the timer again => make api call after 200 ms
-   *
-   *  setTimeout(200ms) => make an API call
-   */
+  // console.log(Object.keys(searchCache).length);
+  
 
   async function getData() {
     try {
       const data = await fetchAPI(YOUTUBE_SEARCH_API + query);
       setSearchVideo(data[1]);
-      dispatch(casheResults({
-        [query]: data[1]
-      }));
+      dispatch(
+        casheResults({
+          [query]: data[1],
+        })
+      );
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   }
 
   return { searchVideo };
 }
+
+/**
+ *  key - i
+ *   - render the component
+ *   - useEffect();
+ *   - start the timer => make API call after 200 ms
+ *
+ *  key - ip
+ *   - reconsilisation is started
+ *   - destroy the component(useEffect return method -> clearTimeout)
+ *   - clears the thing up
+ *   - re-render the component
+ *   - call the useEffect() again
+ *   - start the timer again => make api call after 200 ms
+ *
+ *  setTimeout(200ms) => make an API call
+ */
