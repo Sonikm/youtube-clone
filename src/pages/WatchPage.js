@@ -1,6 +1,7 @@
 import React from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "../components/CommentsContainer";
+import LiveChat from "../components/LiveChat";
 
 function WatchPage() {
   const [searchParams] = useSearchParams();
@@ -8,21 +9,26 @@ function WatchPage() {
   // console.log(query);
 
   return (
-    <div className="p-4">
-      <div>
+    <div className="p-4 flex justify-between ">
+      <div className="flex-1">
         <iframe
-          width="560"
-          height="315"
+        className="w-full"
+          width="660"
+          height="480"
           src={`https://www.youtube.com/embed/${query}?si=APjRmLy2Pq3A2sxv`}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
-      </div>
-      <div className="mt-5">
+        <div className="mt-5">
         <CommentsContainer />
       </div>
+      </div>
+
+       <LiveChat/>
+   
+      
     </div>
   );
 }
