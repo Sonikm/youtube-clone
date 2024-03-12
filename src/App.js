@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import Body from "./components/Body";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 function App() {
   const [themeMode, setThemeMode] = useState("light");
@@ -20,9 +23,12 @@ function App() {
 
   return (
     <ThemeProvider value={{ darkTheme, lightTheme, themeMode }}>
-      <div className="App dark:bg-black ">
-        <Header />
-      </div>
+      <Provider store={store}>
+        <div className="App dark:bg-black min-h-screen w-full ">
+          <Header />
+          <Body />
+        </div>
+      </Provider>
     </ThemeProvider>
   );
 }

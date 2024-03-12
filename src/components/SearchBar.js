@@ -27,7 +27,7 @@ function SearchBar() {
           />
         </button>
       </div>
-      <div className="bg-gray-200 transition-all dark:bg-[#222222] ease-out  rounded-full w-10 h-10 flex justify-center items-center cursor-pointer">
+      <div className="bg-gray-200 dark:bg-[#222222]  rounded-full w-10 h-10 flex justify-center items-center cursor-pointer">
         <img
           className="w-6"
           src={themeMode === "dark" ? micIconDark : micIcon}

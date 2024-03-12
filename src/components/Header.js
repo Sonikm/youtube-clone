@@ -13,7 +13,7 @@ import useTheme from "../contexts/ThemeContext";
 function Header() {
   const { themeMode } = useTheme();
   return (
-    <div className=" p-2 heme-transition  px-4 grid grid-flow-col gap-5 items-center justify-between dark:bg-black ">
+    <div className=" p-2 heme-transition  px-6 grid grid-flow-col gap-5 items-center justify-between dark:bg-black ">
       <div className="flex gap-6 dark:gap-2 flex-nowrap items-center col-span-1">
         <ToggleSidebar />
         <Logo />
