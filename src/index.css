@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #000;
+  --secondary: #4f4a4a;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+.scrollbar-dark {
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
 .toggle {
   --size: 1.6rem;
 

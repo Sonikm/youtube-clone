@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Body from "./components/Body";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import store from "./utils/store";
 
 function App() {
   const [themeMode, setThemeMode] = useState("light");
+
+  // const isOpenSidebar = useSelector(store => store.app.isOpenSidebar);
 
   const darkTheme = () => {
     setThemeMode("dark");
@@ -22,14 +24,14 @@ function App() {
   }, [themeMode]);
 
   return (
-    <ThemeProvider value={{ darkTheme, lightTheme, themeMode }}>
-      <Provider store={store}>
-        <div className="App dark:bg-black min-h-screen w-full ">
+    <Provider store={store}>
+      <ThemeProvider value={{ darkTheme, lightTheme, themeMode }}>
+        <div className="App dark:bg-black min-h-screen w-full relative">
           <Header />
           <Body />
         </div>
-      </Provider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Provider>
   );
 }
 
