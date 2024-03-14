@@ -16,7 +16,7 @@ function CloseSidebar() {
     const {themeMode} = useTheme();
 
   return (
-    <div className="flex flex-col gap-8 py-2 items-center">
+    <div className="flex flex-col gap-8 py-2 items-center fixed top-16 bg-white dark:bg-black h-full w-20 pr-6  ">
       <SidebarIcon icon={themeMode === 'dark' ? homeIconDark : homeIcon} text={"Home"} />
       <SidebarIcon icon={ themeMode === 'dark' ? shortsIconDark : shortsIcon} text={"Shorts"} />
       <SidebarIcon icon={themeMode === 'dark' ? subscriptionsDark : subscriptions} text={"Subscriptions"} />
