@@ -3,6 +3,7 @@ import UserAvatar from './UserAvatar';
 
 function VideoCard({videoInfo}) {
   const {title, thumbnails, channelTitle} = videoInfo;
+
   return (
     <div className='flex flex-col justify-start gap-4  w-[320px]'>
       <img className='rounded-xl ' src={thumbnails?.medium?.url} alt=''/>
