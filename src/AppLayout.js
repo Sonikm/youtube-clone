@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import VideoContainer from "./components/VideoContainer";
 import Body from "./components/Body";
 import WatchPage from "./pages/WatchPage";
+import SearchVideoListContainer from './pages/SearchVideoListContainer';
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
           path: "/watch",
           element: <WatchPage />,
         },
+        {
+          path: "/result",
+          element: <SearchVideoListContainer/>
+        }
       ],
     },
   ]);

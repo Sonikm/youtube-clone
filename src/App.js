@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { Provider } from "react-redux";
-import AppLayout from "./AppLayout.js";
+import AppLayout from "./AppLayout";
 import store from "./utils/store";
 
 function App() {

@@ -13,6 +13,7 @@ import ButtonList from "./ButtonList";
 
 function Header() {
   const { themeMode } = useTheme();
+
   return (
     <div className="flex flex-col  p-2  px-6 fixed top-0 left-0 bg-white dark:bg-black  w-full ">
       <div className="grid grid-flow-col gap-5 items-center justify-between dark:bg-black ">
@@ -20,8 +21,7 @@ function Header() {
           <ToggleSidebar />
           <Logo />
         </div>
-
-        <SearchBar />
+          <SearchBar />
         <div className="flex col-span-1 gap-4 p-2 items-center ">
           <img
             className="w-6 cursor-pointer "
@@ -39,6 +39,9 @@ function Header() {
         </div>
       </div>
         <ButtonList />
+        <ButtonList />
+     
+      <ButtonList />
      
     </div>
   );

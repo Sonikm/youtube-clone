@@ -2,8 +2,8 @@ import React from "react";
 import Suggestion from "./Suggestion";
 import useVideoSuggestions from "../hooks/useVideoSuggestions";
 
-function VideoSearchSuggestions({query}) {
-  const { suggestions } = useVideoSuggestions(query);
+function VideoSearchSuggestions() {
+  const { suggestions } = useVideoSuggestions();
 
   if (!suggestions.length) return;
 

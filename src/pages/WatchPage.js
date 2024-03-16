@@ -11,9 +11,10 @@ function WatchPage() {
         height="315"
         src={`https://www.youtube.com/embed/${videoId}?si=eR6X2ozu4KtUaCl2`}
         title="YouTube video player"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen="allowfullscreen"
+        allowFullScreen="allowfullscreen"
+        autoPlay="1"
       ></iframe>
     </div>
   );

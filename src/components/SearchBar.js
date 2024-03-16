@@ -8,28 +8,39 @@ import VideoSearchSuggestions from "./VideoSearchSuggestions";
 import useVideoSuggestions from "../hooks/useVideoSuggestions";
 import { useDispatch, useSelector } from "react-redux";
 import { showSuggetions } from "../utils/appSlice";
+import { useParams, useSearchParams } from "react-router-dom";
+import { searchQuery } from "../utils/searchSlice";
 
 function SearchBar() {
-  const [query, setQuery] = useState("");
+  // const [query, setQuery] = useState("");
   const { themeMode } = useTheme();
-  useVideoSuggestions(query);
+  const [, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
   const isShowSuggestions = useSelector((store) => store.app.suggestions);
+  const query = useSelector(store => store.search.query);
 
   function handleVideoSearch(text) {
-    setQuery(text);
+    // setQuery(text);
+    dispatch(searchQuery(text));
   }
 
   function handleSuggestions(show) {
     dispatch(showSuggetions(show));
   }
 
+  function handleSearchVideoResult(e) {
+    e.preventDefault();
+    // setSearchParams(`result?search_query=${query}`);
+  }
 
   return (
-    <div className="flex col-span-3 gap-4 relative ">
+    <form
+      className="flex col-span-3 gap-4 relative "
+      onSubmit={(e) =>  handleSearchVideoResult(e)}
+    >
       <div className="flex flex-col ">
         <div className="border border-gray-300 w-[560px]   dark:border-gray-800  flex-1 flex rounded-3xl overflow-hidden ">
-          <input
+          <input onMouseEnter={()=> console.log('hello')}
             value={query}
             onChange={(e) => handleVideoSearch(e.target.value)}
             className="flex-1  dark:focus:border-blue-500 dark:text-white dark:placeholder:text-gray-400  dark:border-gray-800  dark:bg-black  focus:border-blue-600 border-[1px] 	 outline-none border-gray-300 px-6  rounded-full rounded-r-none"
@@ -49,7 +60,7 @@ function SearchBar() {
             />
           </button>
         </div>
-        {isShowSuggestions && <VideoSearchSuggestions query={query} />}
+        {isShowSuggestions && <VideoSearchSuggestions />}
       </div>
 
       <div className="bg-gray-200 dark:bg-[#222222]  rounded-full w-10 h-10 flex justify-center items-center cursor-pointer">
@@ -59,7 +70,7 @@ function SearchBar() {
           alt="mic"
         />
       </div>
-    </div>
+    </form>
   );
 }
 
