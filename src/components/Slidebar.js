@@ -10,7 +10,7 @@ const Slidebar = () => {
   if (!isMenuOpen) return;
 
   return (
-    <div className="col-span-1 shadow-md  border-r flex flex-col gap-3 p-4 ">
+    <div className="col-span-1 shadow-md  border-r flex flex-col gap-3 p-4 w-[180px] ">
       <ul>
         <Link to={"/"}>
           <li>Home</li>

@@ -4,9 +4,9 @@ import CommentsContainer from "../components/CommentsContainer";
 import LiveChat from "../components/LiveChat";
 
 function WatchPage() {
-  const [searchParams] = useSearchParams();
-  const query = searchParams.get("v");
-  // console.log(query);
+ const [searchParams] = useSearchParams();
+
+ const query = searchParams.get("v");
 
   return (
     <div className="p-4 flex justify-between ">

@@ -1,6 +1,8 @@
 import React from "react";
 
 function VideoCard({ video }) {
+
+  console.log(video);
   return (
     <div className="w-80  p-2">
       <img
