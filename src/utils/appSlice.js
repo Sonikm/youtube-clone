@@ -4,7 +4,7 @@ const appSlice = createSlice({
   name: "app",
   initialState: {
     isOpenSidebar: false,
-    suggestions: false,
+    suggestions: true,
   },
   reducers: {
     toggleSidebar: (state) => {
