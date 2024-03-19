@@ -10,3 +10,4 @@ export const fetchData = async (API_URL) => {
       console.error("Error fetching data:", error);
     }
   };
+  

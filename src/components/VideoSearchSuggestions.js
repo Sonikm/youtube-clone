@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Suggestion from "./Suggestion";
 import useVideoSuggestions from "../hooks/useVideoSuggestions";
 import useSearchVideoList from "../hooks/useSearchVideoList";
 
 function VideoSearchSuggestions() {
-  const [searchVideo, setSearchVideo] = useState("");
   const { suggestions } = useVideoSuggestions();
-  useSearchVideoList(searchVideo);
+  useSearchVideoList();
 
   if (!suggestions.length) return;
 
