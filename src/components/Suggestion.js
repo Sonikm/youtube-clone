@@ -5,15 +5,31 @@ import useTheme from "../contexts/ThemeContext";
 import { useDispatch } from "react-redux";
 import { showSuggetions } from "../utils/appSlice";
 import { searchQuery } from "../utils/searchSlice";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 function Suggestion({ suggestion }) {
   const { themeMode } = useTheme();
+  const [, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   function handleSuggestions(suggestion) {
-    dispatch(showSuggetions(false));
-    dispatch(searchQuery(suggestion));
-  }
+  // Dispatch actions to update Redux store
+  dispatch(showSuggetions(false)); // Hide suggestions
+  dispatch(searchQuery(suggestion)); // Update search query in store
+   // Get current path
+   const currentPath = window.location.pathname;
+
+   // If current path doesn't start with "/result", navigate to "/result"
+   // and set search query in search params
+   if (!currentPath.startsWith("/result")) {
+     navigate(`/result`);
+     setSearchParams({ query: suggestion });
+   } else {
+     // If current path starts with "/result", only set search query in search params
+     setSearchParams({ query: suggestion });
+   }
+ }
 
   return (
     <li
