@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { searchQuery } from "../utils/searchSlice";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { showSuggetions } from "../utils/appSlice";
+import clearIcon from "../assets/clear_icon.svg";
+import clearIconDark from "../assets/clear_icon_dark.svg";
 
 function SearchBar() {
   // Fetching theme mode from ThemeContext
@@ -22,6 +24,7 @@ function SearchBar() {
   // Refs for form and input elements
   const formRef = useRef(null);
   const inputRef = useRef(null);
+  console.log(query)
 
   // Navigate hook for handling navigation
   const navigate = useNavigate();
@@ -63,12 +66,14 @@ function SearchBar() {
 
     // Check if the current path doesn't start with "/result" and navigate accordingly
     const currentPath = window.location.pathname;
-    if (!currentPath.startsWith("/result")) {
-      navigate("/result");
+    if (query !== "") {
+      if (!currentPath.startsWith("/result" && query !== "")) {
+        navigate("/result");
+      }
+      // Set search params and hide suggestions when the form is submitted
+      setSearchParams({ query: query });
+      toggleSuggestions(false);
     }
-    // Set search params and hide suggestions when the form is submitted
-    setSearchParams({ query: query });
-    toggleSuggestions(false);
   }
 
   // Function to check if the input is focused
@@ -84,17 +89,28 @@ function SearchBar() {
       onFocus={() => toggleSuggestions(true)}
     >
       <div className="flex flex-col ">
-        <div className="border border-gray-300 w-[560px]   dark:border-gray-800  flex-1 flex rounded-3xl overflow-hidden ">
+        <div className="border border-gray-300 w-[560px]   dark:border-gray-800  flex-1 flex rounded-3xl overflow-hidden relative ">
           <input
             ref={inputRef}
             value={query}
             onChange={(e) => handleVideoSearch(e.target.value)}
-            className="flex-1  dark:focus:border-blue-500 dark:text-white dark:placeholder:text-gray-400  dark:border-gray-800  dark:bg-black  focus:border-blue-600 border-[1px] 	 outline-none border-gray-300 px-6  rounded-full rounded-r-none"
+            className="flex-1 relative dark:focus:border-blue-500 dark:text-white dark:placeholder:text-gray-400  dark:border-gray-800  dark:bg-black  focus:border-blue-600 border-[1px] 	 outline-none border-gray-300 px-6  rounded-full rounded-r-none"
             type="text"
             placeholder="Search"
             onBlur={() => showSuggetions(false)} // Hide suggestions when input loses focus
             onFocus={() => showSuggetions(true)} // Show suggestions when input is focused
           />
+          {query !== "" && (
+            <button className={`w-10 h-10 flex justify-center items-center absolute hover:bg-gray-200 rounded-full right-20 top-0 dark:hover:bg-[--primaryGrayDark] `}>
+              <img
+                className="w-8 h-8"
+                onClick={() => dispatch(searchQuery(""))}
+                src={themeMode === "dark" ? clearIconDark : clearIcon}
+                alt=""
+              />
+            </button>
+          )}
+
           <button
             type="Search"
             className="p-2   dark:bg-[#222222]  px-6  border-gray-300 bg-gray-100"
@@ -106,7 +122,8 @@ function SearchBar() {
             />
           </button>
         </div>
-        {isShowSuggestions && <VideoSearchSuggestions />} {/* Render suggestions if showSuggestions is true */}
+        {isShowSuggestions && <VideoSearchSuggestions />}{" "}
+        {/* Render suggestions if showSuggestions is true */}
       </div>
 
       <div className="bg-gray-200 dark:bg-[#222222]  rounded-full w-10 h-10 flex justify-center items-center cursor-pointer">
