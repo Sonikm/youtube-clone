@@ -1,8 +1,9 @@
 import React from 'react';
 import UserAvatar from './UserAvatar';
+import { formatPublishedVideo } from '../utils/helper';
 
 function VideoCard({videoInfo}) {
-  const {title, thumbnails, channelTitle} = videoInfo;
+  const {title, thumbnails, channelTitle, publishedAt} = videoInfo;
 
   return (
     <div className='flex flex-col justify-start gap-4  w-[320px]'>
@@ -13,7 +14,7 @@ function VideoCard({videoInfo}) {
         <p className='line-clamp-3 dark:text-white'>{title}</p>
         <div className='text-sm text-gray-500 dark:text-[#b3b2b2]'>
         <p>{channelTitle}</p>
-        <p>446K views . 2 weeks ago</p>
+        <p>446K views . {formatPublishedVideo(publishedAt)}</p>
         </div>
       
        </div>

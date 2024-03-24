@@ -24,7 +24,6 @@ function SearchBar() {
   // Refs for form and input elements
   const formRef = useRef(null);
   const inputRef = useRef(null);
-  console.log(query)
 
   // Navigate hook for handling navigation
   const navigate = useNavigate();
