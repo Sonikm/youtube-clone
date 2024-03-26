@@ -59,3 +59,23 @@ export const formatPublishedVideo = (publishedAt) => {
   return durationString;
 };
 
+export function formatViews(vc){
+  let viewsCount = parseInt(vc);
+  if(viewsCount < 1000) {
+    return viewsCount;
+  }
+  else if(viewsCount >= 1000 && viewsCount < 10000) {
+    return (viewsCount / 1000).toFixed(1) + "K";
+  }
+  else if(viewsCount >= 10000 && viewsCount < 1000000) {
+    return (viewsCount / 1000).toFixed(0) + "K";
+  }
+  else if(viewsCount >= 1000000 && viewsCount < 10000000) {
+    return (viewsCount / 1000000).toFixed(1) + "M";
+  }
+  else if(viewsCount >= 10000000) {
+    return (viewsCount / 1000000).toFixed(0) + "M";
+  }
+}
+
+
