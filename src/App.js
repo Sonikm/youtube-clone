@@ -23,7 +23,7 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider value={{ darkTheme, lightTheme, themeMode }}>
-        <div className="App dark:bg-black min-h-screen w-full relative">
+        <div className="App dark:bg-black min-h-screen overflow-hidden w-full relative">
          <AppLayout/>
         </div>
       </ThemeProvider>

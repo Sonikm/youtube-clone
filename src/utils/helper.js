@@ -78,4 +78,45 @@ export function formatViews(vc){
   }
 }
 
+// Function to format hashtags and URLs
+export const formatText = (text) => {
+  // Regex pattern to identify hashtags (#word)
+  const hashtagRegex = /#\w+/g;
+  // Regex pattern to identify URLs
+  const urlRegex = /https?:\/\/\S+/g;
+  // Regex pattern to identify video timing (00:00)
+  const timeRegex = /\b\d{2}:\d{2}\b/g;
 
+  return text.split('\n').map((line, index) => (
+    <p key={index}>
+      {line.split(' ').map((word, wordIndex) => {
+        // Check if word is a hashtag
+        if (word.match(hashtagRegex)) {
+          return (
+            <span key={wordIndex} className=" text-blue-600 cursor-pointer dark:text-[#3CA0F5]">{word} </span>
+          );
+        }
+        // Check if word is a URL
+        else if (word.match(urlRegex)) {
+          return (
+            <a key={wordIndex} href={word} className="text-blue-600 cursor-pointer dark:text-[#3CA0F5]" target="_blank" rel="noopener noreferrer">{word} </a>
+          );
+        }
+        // Check if word is video timing
+        else if (word.match(timeRegex)) {
+          return (
+            <span key={wordIndex} className="text-blue-600 cursor-pointer dark:text-[#3CA0F5]">{word} </span>
+          );
+        }
+        // Otherwise, return the word as is
+        else {
+          return word + ' ';
+        }
+      })}
+    </p>
+  ));
+};
+
+export const formatNumberWithComma = (number) => {
+  return parseInt(number).toLocaleString()  // Output: "7,249,829"
+}
