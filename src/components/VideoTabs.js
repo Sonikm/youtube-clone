@@ -1,5 +1,4 @@
 import React from 'react';
-import userProfile from "../assets/user.png";
 import threeDotsIcon from "../assets/three-dots.svg";
 import threeDotsIconDark from "../assets/three-dots-dark.svg";
 import like from "../assets/like.svg";
@@ -18,9 +17,8 @@ import useTheme from "../contexts/ThemeContext";
 import { formatViews } from '../utils/helper';
 
 
-function VideoTabs({channelTitle,likeCount , videoUserProfilePhoto}) {
+function VideoTabs({channelTitle,likeCount , videoUserProfilePhoto,subscriberCount}) {
     const { themeMode } = useTheme();
-
   return (
     <div className="flex justify-between items-center dark:text-white font-semibold text-sm">
     <div className="flex gap-3 items-center">
@@ -32,7 +30,7 @@ function VideoTabs({channelTitle,likeCount , videoUserProfilePhoto}) {
         />
         <div className="flex flex-col  ">
           <span className="">{channelTitle}</span>
-          <span className="text-xs font-medium dark:text-[#AAAAAA]">92.4K subscribers</span>
+          <span className="text-xs font-medium dark:text-[#AAAAAA]">{formatViews(subscriberCount)} subscribers</span>
         </div>
       </div>
       <div className="flex flex-row  dark:bg-[#222222] items-center gap-1  bg-gray-200  cursor-pointer rounded-3xl p-2 px-4">

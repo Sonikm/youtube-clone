@@ -4,9 +4,8 @@ import { VIDEO_CARD_DATA } from "../utils/constent";
 
 function usePlayVideoData(videoId) {
   const [videoPlayData, setVideoPlayData] = useState(null);
-//   const [videoPlayData, setVideoPlayData] = useState(null);
 
-useEffect(() => {
+  useEffect(() => {
     async function getData() {
       const data = await fetchData(VIDEO_CARD_DATA + videoId);
       setVideoPlayData(data?.items[0]);
@@ -14,8 +13,8 @@ useEffect(() => {
 
     getData();
   }, [videoId]);
-  
-  return {videoPlayData};
+
+  return { videoPlayData };
 }
 
-export default usePlayVideoData
+export default usePlayVideoData;

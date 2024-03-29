@@ -6,6 +6,7 @@ import useGetVideoViewsAndLikeCountData from '../hooks/useVideoAdditionalData';
 function VideoCard({videoInfo, videoId}) {
   const {title, thumbnails, channelTitle, publishedAt, channelId} = videoInfo;
  const { videoLikeViewsAndCommentsData, videoUserProfilePhoto} = useGetVideoViewsAndLikeCountData(videoId, channelId);
+ console.log(channelId);
  if(videoLikeViewsAndCommentsData === null ) return;
 
  const {commentCount, favoriteCount, likeCount, viewCount} = videoLikeViewsAndCommentsData;
