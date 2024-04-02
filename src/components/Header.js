@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ToggleSidebar from "./ToggleSidebar";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
@@ -10,9 +10,12 @@ import notificationDark from "../assets/notification-dark.svg";
 import ToggleTheme from "./ToggleTheme";
 import useTheme from "../contexts/ThemeContext";
 import ButtonList from "./ButtonList";
+import {  useSelector } from "react-redux";
 
 function Header() {
   const { themeMode } = useTheme();
+  const isVisibleButtonList = useSelector((store) => store.app.isVisible);
+  console.log(isVisibleButtonList);
   return (
     <div className="flex flex-col  p-2  px-6 fixed top-0 left-0 bg-white dark:bg-black  w-full ">
       <div className="grid grid-flow-col gap-5 items-center justify-between dark:bg-black ">
@@ -37,8 +40,11 @@ function Header() {
           <ToggleTheme />
         </div>
       </div>
-
-      <ButtonList />
+      {isVisibleButtonList ? (
+        <div className=" ml-10 px-10 py-4 flex gap-4 overflow-x-scroll no-scrollbar  ">
+          <ButtonList />
+        </div>
+      ) : null}
     </div>
   );
 }

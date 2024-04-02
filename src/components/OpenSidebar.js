@@ -9,6 +9,10 @@ function OpenSidebar() {
   const isOpenSidebar = useSelector((store) => store.app.isOpenSidebar);
   const dispatch = useDispatch();
 
+  function handleToggleSidebar() {
+    dispatch(toggleSidebar());
+  }
+
   return (
     <>
       <div
@@ -23,7 +27,8 @@ function OpenSidebar() {
 
         <SidebarButtonList />
       </div>
-      <div onClick={()=> dispatch(toggleSidebar())}
+      <div
+        onClick={() => handleToggleSidebar()}
         className={` ${
           isOpenSidebar ? "translate-x-0 " : "translate-x-full"
         } ease-in-out duration-300  fixed w-full h-screen bg-black opacity-40 top-0 left-0 z-20`}

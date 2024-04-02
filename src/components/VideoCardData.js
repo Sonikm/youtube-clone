@@ -1,7 +1,6 @@
 import React from "react";
 import CommentsBox from "./CommentsBox";
 import VideoDescription from "./VideoDescription";
-import usePlayVideoData from "../hooks/usePlayVideoData";
 import VideoTitle from "./VideoTitle";
 import VideoTabs from "./VideoTabs";
 import useVideoAdditionalData from "../hooks/useVideoAdditionalData";
