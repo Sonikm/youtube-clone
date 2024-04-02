@@ -1,13 +1,11 @@
 import React from 'react';
-import UserAvatar from './UserAvatar';
 import { formatPublishedVideo, formatViews } from '../utils/helper';
 import useGetVideoViewsAndLikeCountData from '../hooks/useVideoAdditionalData';
 
 function VideoCard({videoInfo, videoId}) {
   const {title, thumbnails, channelTitle, publishedAt, channelId} = videoInfo;
  const { videoLikeViewsAndCommentsData, videoUserProfilePhoto} = useGetVideoViewsAndLikeCountData(videoId, channelId);
- console.log(channelId);
- if(videoLikeViewsAndCommentsData === null ) return;
+ if(!videoLikeViewsAndCommentsData ) return;
 
  const {commentCount, favoriteCount, likeCount, viewCount} = videoLikeViewsAndCommentsData;
 
