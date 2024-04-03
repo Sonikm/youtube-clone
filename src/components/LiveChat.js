@@ -9,6 +9,7 @@ import rightArrowIconDark from "../assets/right-arrow-dark.svg";
 import { fetchData } from "../utils/helper";
 import user from '../assets/user.jpg';
 import useTheme from "../contexts/ThemeContext";
+import { RANDOMUSER } from "../utils/constent";
 
 function LiveChat({ setIsShowChats }) {
   const [chat, setChat] = useState("");
@@ -21,7 +22,7 @@ function LiveChat({ setIsShowChats }) {
       getRandomChats();
     }, 1000);
     async function getRandomChats(){
-       const data = await fetchData('https://randomuser.me/api/');
+       const data = await fetchData(RANDOMUSER);
        dispatch(addComments({
         name: data.results[0].name.first,
         message: "Lorem ipsum dolor sit amet.",
@@ -54,7 +55,7 @@ function LiveChat({ setIsShowChats }) {
   return (
     <form
       onSubmit={(e) => handleSubmit(e)}
-      className=" font-semibold scrollbar-dark  flex overflow-hidden flex-col justify-center items-center rounded-lg  border border-gray-300 dark:border-[--secondary] dark:text-white rounded-b-3xl "
+      className=" font-semibold dark:scrollbar-dark  flex overflow-hidden flex-col justify-center items-center rounded-lg  border border-gray-300 dark:border-[--secondary] dark:text-white rounded-b-3xl "
     >
       <div className="  font-semibold w-full px-3  p-2 flex justify-between items-center  border-b border-gray-300 dark:border-[--secondary] dark:text-white">
         <span>Live Chats</span>

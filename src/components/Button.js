@@ -7,7 +7,7 @@ function Button({ text , onClick}) {
   return (
     <div
       onClick={onClick}
-      className={`${category === text ? "bg-black text-white dark:bg-white dark:text-black dark:hover:bg-white " : " bg-gray-200"}   dark:bg-[--primaryGrayDark]    dark:text-white dark:hover:bg-[--secondary] text-nowrap text-sm cursor-pointer font-bold p-[6px] px-4 rounded-xl  `} >
+      className={`${category === text ? "bg-black text-white dark:bg-white dark:text-black dark:hover:bg-white " : " bg-gray-200 dark:text-white"}   dark:bg-[--primaryGrayDark]     dark:hover:bg-[--secondary] text-nowrap text-sm cursor-pointer font-bold p-[6px] px-4 rounded-xl  `} >
       {text}
     </div>
   );

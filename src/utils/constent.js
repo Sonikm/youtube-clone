@@ -1,18 +1,20 @@
 //* Video key
-export const API_KEY = "AIzaSyDWn_ifb4DlDtIhTZDtL9m_Y0EEdvEI9pM";
-// export const API_KEY = "AIzaSyCX55kqbiFuiohqzwCsHVmuKgrvt--5juo";
+// export const API_KEY = "AIzaSyDWn_ifb4DlDtIhTZDtL9m_Y0EEdvEI9pM";
+export const API_KEY = "AIzaSyCX55kqbiFuiohqzwCsHVmuKgrvt--5juo";
 // export const API_KEY = "AIzaSyB3_o_wwmXTVhsEgP_2Uu7DreU4Rm7B8XU";
 // export const videoCategory_api = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&maxResults=100`;
 export const CATEGORIES_DATA_API = `https://www.googleapis.com/youtube/v3/videoCategories?key=${API_KEY}&regionCode=IN`;
 
-
+//* Random user api
+export const RANDOMUSER = "https://randomuser.me/api/";
 
 //* Search video list api
 export const SEARCH_VIDEO_LIST_API = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&type=video&key=${API_KEY}&q=`;
 
 //* Youtube main video list
 export const YT_VIDEO_LIST_API =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=5&chart=mostPopular&regionCode=IN&key=" + API_KEY;
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=5&chart=mostPopular&regionCode=IN&key=" +
+  API_KEY;
 
 //* Youtube category api
 export const VIDEO_CATEGORIES_API = `https://www.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=IN&key=${API_KEY}`;
@@ -52,9 +54,7 @@ export const VIDEO_COMMENTS = `https://www.googleapis.com/youtube/v3/commentThre
 // subscribe count ==> https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UC68nKdrLbLL0Vj7ilVkLmmg&key=AIzaSyD7sZPHCDxgctQIR75KTO2JsN4ba6fMuEM
 //https://www.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=IN&key=AIzaSyDg7RCJbZ5fk51Da1ROAhTjm1KWD8LGyqs
 
-
-export 
-const buttonList = [
+export const buttonList = [
   "All",
   "Music",
   "Programming",
