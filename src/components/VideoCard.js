@@ -14,7 +14,7 @@ function VideoCard({videoInfo, videoId}) {
       <img className='rounded-xl ' src={thumbnails?.medium?.url} alt=''/>
       <div className='flex gap-2'>
        {/* <UserAvatar/> */}
-       <img className="w-6 h-6 cursor-pointer" src={videoUserProfilePhoto} alt=''/>
+       <img className="w-6 h-6 cursor-pointer rounded-full" src={videoUserProfilePhoto} alt=''/>
        <div className='flex gap-2 flex-col justify-start text-wrap font-semibold pr-4 '>
         <p className='line-clamp-3 dark:text-white'>{title}</p>
         <div className='text-sm text-gray-500 dark:text-[#b3b2b2]'>

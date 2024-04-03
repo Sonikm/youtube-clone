@@ -2,13 +2,15 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Body() {
+  const isVisibleButtonList = useSelector(store => store.app.isVisible)
   return (
     <div className="flex gap-10 p-3">
       <Header />
       <Sidebar />
-      <div className="mt-[120px] ml-[100px]">
+      <div className={`${isVisibleButtonList ? "mt-[120px]": " mt-20 "}  ml-[100px]`}>
         <Outlet />
       </div>
     </div>

@@ -1,7 +1,7 @@
 //* Video key
-export const API_KEY = "AIzaSyCX55kqbiFuiohqzwCsHVmuKgrvt--5juo";
+export const API_KEY = "AIzaSyDWn_ifb4DlDtIhTZDtL9m_Y0EEdvEI9pM";
 // export const API_KEY = "AIzaSyCX55kqbiFuiohqzwCsHVmuKgrvt--5juo";
-// export const API_KEY = "AIzaSyD3_8qgZRimxv0jXBr3JvMuSreRhhcPD4Q";
+// export const API_KEY = "AIzaSyB3_o_wwmXTVhsEgP_2Uu7DreU4Rm7B8XU";
 // export const videoCategory_api = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&maxResults=100`;
 export const CATEGORIES_DATA_API = `https://www.googleapis.com/youtube/v3/videoCategories?key=${API_KEY}&regionCode=IN`;
 

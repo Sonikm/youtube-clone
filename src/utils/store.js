@@ -3,6 +3,7 @@ import appSlice from "./appSlice";
 import searchSlice from "./searchSlice";
 import casheSlice from "./casheSlice";
 import categorySlice from "./categorySlice";
+import liveChatSlice from "./liveChatSlice";
 
 const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
         search: searchSlice,
         cashe: casheSlice,
         category: categorySlice,
+        chats: liveChatSlice,
     }
 });
 

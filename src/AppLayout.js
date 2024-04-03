@@ -5,6 +5,7 @@ import VideoContainer from "./components/VideoContainer";
 import Body from "./components/Body";
 import WatchPage from "./pages/WatchPage";
 import SearchVideoListContainer from './pages/SearchVideoListContainer';
+import LiveChat from './components/LiveChat';
 
 const router = createBrowserRouter([
     {
