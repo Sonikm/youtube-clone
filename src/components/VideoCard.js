@@ -8,6 +8,7 @@ function VideoCard({videoInfo, videoId}) {
  if(!videoLikeViewsAndCommentsData ) return;
 
  const {commentCount, favoriteCount, likeCount, viewCount} = videoLikeViewsAndCommentsData;
+//  console.log(channelId);
 
   return (
     <div className='flex flex-col justify-start gap-4  w-[320px]'>

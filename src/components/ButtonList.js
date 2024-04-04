@@ -17,10 +17,17 @@ function ButtonList() {
   }
 
   return  <>
-   <Button key={0} text={"All"} onClick={() => handleVideoCategory('All')} />
-      {videoCategories?.map((btn) => (
-        <Button text={btn?.snippet?.title} key={btn?.snippet?.channelId} onClick={() => handleVideoCategory(btn?.snippet?.title)} />
-      ))}</>
+  <Button key={0} text={"All"} onClick={() => handleVideoCategory("All")} />
+  {videoCategories?.map((btn, index) => (
+    <Button
+      text={btn?.snippet?.title}
+      key={index}
+      onClick={() => handleVideoCategory(btn?.snippet?.title)}
+    />
+  ))}
+</>
+   
+  
 }
 
 export default ButtonList;

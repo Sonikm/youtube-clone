@@ -19,7 +19,7 @@ function Logo() {
   }
 
   return (
-    <Link to="/">
+    <Link to="/" onClick={toggleElements(true)}>
       <img
         onClick={() => handleToggle()}
         className="w-24 dark:w-32  cursor-pointer"

@@ -9,12 +9,11 @@ function VideoContainer() {
   const { videoList} = useYtVideoList();
   const dispatch = useDispatch();
 
-
   if (!videoList?.length || videoList === null) return;
 
-  function handleClick(){
-    dispatch(toggleElements(false));
-  }
+function handleClick(){
+  dispatch(toggleElements(false));
+}
 
   return (
     <div className=" flex flex-wrap gap-y-10 gap-x-4">

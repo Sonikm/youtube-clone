@@ -5,7 +5,7 @@ import VideoContainer from "./components/VideoContainer";
 import Body from "./components/Body";
 import WatchPage from "./pages/WatchPage";
 import SearchVideoListContainer from './pages/SearchVideoListContainer';
-import LiveChat from './components/LiveChat';
+import ChannelView from './pages/ChannelView';
 
 const router = createBrowserRouter([
     {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         {
           path: "/result",
           element: <SearchVideoListContainer/>
-        }
+        },
       ],
     },
   ]);

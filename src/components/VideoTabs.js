@@ -16,14 +16,16 @@ import notificationDark from "../assets/notification-dark.svg";
 import useTheme from "../contexts/ThemeContext";
 import { formatViews } from '../utils/helper';
 
-
 function VideoTabs({channelTitle,likeCount , videoUserProfilePhoto,subscriberCount}) {
-    const { themeMode } = useTheme();
+  const { themeMode } = useTheme();
+
+     
+
   return (
     <div className="flex justify-between items-center dark:text-white font-semibold text-sm">
     <div className="flex gap-3 items-center">
       <div className="flex items-center  gap-3">
-        <img
+      <img
           className="w-9 h-9 cursor-pointer rounded-full"
           src={videoUserProfilePhoto}
           alt="user"

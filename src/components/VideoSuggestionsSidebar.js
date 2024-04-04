@@ -4,7 +4,7 @@ import SidebarVideos from "./SidebarVideos";
 import LiveChat from "./LiveChat";
 
 function VideoSuggestionsSidebar() {
-  const [isShowChats, setIsShowChats] = useState(true);
+  const [isShowChats, setIsShowChats] = useState(false);
 
   return (
     <div className=" flex flex-col w-[450px]">
