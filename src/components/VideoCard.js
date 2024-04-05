@@ -11,12 +11,12 @@ function VideoCard({videoInfo, videoId}) {
 //  console.log(channelId);
 
   return (
-    <div className='flex flex-col justify-start gap-4  w-[320px]'>
+    <div className='flex flex-col flex-1 justify-start gap-4 xl:w-[300px] md:w-[240px]  w-[380px] sm:w-[200px] xs:w-[300px] 2xs:w-[200px]'>
       <img className='rounded-xl ' src={thumbnails?.medium?.url} alt=''/>
-      <div className='flex gap-2'>
+      <div className='flex gap-2 sm:text-sm'>
        {/* <UserAvatar/> */}
        <img className="w-6 h-6 cursor-pointer rounded-full" src={videoUserProfilePhoto} alt=''/>
-       <div className='flex gap-2 flex-col justify-start text-wrap font-semibold pr-4 '>
+       <div className='flex gap-2 flex-col justify-start text-wrap font-semibold pr-4 sm:pr-1 '>
         <p className='line-clamp-3 dark:text-white'>{title}</p>
         <div className='text-sm text-gray-500 dark:text-[#b3b2b2]'>
         <p>{channelTitle}</p>

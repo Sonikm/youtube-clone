@@ -16,7 +16,7 @@ function handleClick(){
 }
 
   return (
-    <div className=" flex flex-wrap gap-y-10 gap-x-4">
+    <div className=" flex flex-wrap gap-y-10 gap-x-4 xs:justify-center ">
       {videoList.map((video) => (
         <Link to={`watch?v=${video?.id?.videoId || video?.id}`} onClick={()=> handleClick()} key={video?.id?.videoId || video?.id}>
           <VideoCard videoInfo={video?.snippet} videoId={video?.id?.videoId || video?.id }  />
