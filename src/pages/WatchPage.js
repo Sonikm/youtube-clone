@@ -3,8 +3,9 @@ import WatchContainer from "../components/WatchContainer";
 import VideoSuggestionsSidebar from "../components/VideoSuggestionsSidebar";
 
 function WatchPage() {
+
   return (
-    <div className="flex flex-row flex-1 w-screen overflow-hidden gap-2">
+    <div className={` flex flex-row xl:flex-col  sm:ml-0 overflow-hidden`}>
      <WatchContainer/>
      <VideoSuggestionsSidebar/>
     </div>

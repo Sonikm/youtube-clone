@@ -22,7 +22,7 @@ function VideoTabs({channelTitle,likeCount , videoUserProfilePhoto,subscriberCou
      
 
   return (
-    <div className="flex justify-between items-center dark:text-white font-semibold text-sm">
+    <div className="flex justify-between md:justify-start md:gap-6 items-center dark:text-white font-semibold text-sm">
     <div className="flex gap-3 items-center">
       <div className="flex items-center  gap-3">
       <img
@@ -31,11 +31,11 @@ function VideoTabs({channelTitle,likeCount , videoUserProfilePhoto,subscriberCou
           alt="user"
         />
         <div className="flex flex-col  ">
-          <span className="">{channelTitle}</span>
+          <span className="whitespace-nowrap">{channelTitle}</span>
           <span className="text-xs font-medium dark:text-[#AAAAAA]">{formatViews(subscriberCount)} subscribers</span>
         </div>
       </div>
-      <div className="flex flex-row  dark:bg-[#222222] items-center gap-1  bg-gray-200  cursor-pointer rounded-3xl p-2 px-4">
+      <div className="flex flex-row   dark:bg-[#222222] items-center gap-1  bg-gray-200  cursor-pointer rounded-3xl p-2 px-4">
         <img
           className="w-5 "
           src={themeMode === "light" ? notification : notificationDark}
@@ -56,15 +56,15 @@ function VideoTabs({channelTitle,likeCount , videoUserProfilePhoto,subscriberCou
 
       </div>
   
-      <div className="bg-gray-200 flex flex-row items-center dark:bg-[#222222] rounded-3xl cursor-pointer  px-3 h-9 ">
+      <div className="bg-gray-200  md:hidden flex flex-row items-center dark:bg-[#222222] rounded-3xl cursor-pointer  px-3 h-9 ">
         <span>Share</span>
         <img className="w-5 " src={themeMode === 'dark' ? shareDark : share} alt="" />
       </div>
-      <div className="bg-gray-200 flex flex-row items-center dark:bg-[#222222] rounded-3xl cursor-pointer  px-3 h-9 ">
+      <div className="bg-gray-200  md:hidden flex flex-row items-center dark:bg-[#222222] rounded-3xl cursor-pointer  px-3 h-9 ">
         <span>Download</span>
         <img className="w-5 " src={themeMode === 'dark' ? downloadDark : download} alt="" />
       </div>
-      <img className="w-10 p-2 bg-gray-200 dark:bg-[#222222] rounded-full cursor-pointer  " src={themeMode === 'dark' ? threeDotsIconDark : threeDotsIcon} alt="" />
+      <img className="w-10 p-2  md:hidden bg-gray-200 dark:bg-[#222222] rounded-full cursor-pointer  " src={themeMode === 'dark' ? threeDotsIconDark : threeDotsIcon} alt="" />
     </div>
   </div>
   )

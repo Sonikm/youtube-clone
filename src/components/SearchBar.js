@@ -65,11 +65,11 @@ function SearchBar({ onHandleSearchbar, isSearch }) {
   function handleSubmitForm(e) {
     e.preventDefault();
 
-    // Check if the current path doesn't start with "/result" and navigate accordingly
+    // Check if the current path doesn't start with "/results" and navigate accordingly
     const currentPath = window.location.pathname;
     if (query !== "") {
-      if (!currentPath.startsWith("/result" && query !== "")) {
-        navigate("/result");
+      if (!currentPath.startsWith("/results" && query !== "")) {
+        navigate("/results");
       }
       // Set search params and hide suggestions when the form is submitted
       setSearchParams({ query: query });

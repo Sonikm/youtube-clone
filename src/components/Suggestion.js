@@ -22,12 +22,12 @@ function Suggestion({ suggestion }) {
 
    // If current path doesn't start with "/result", navigate to "/result"
    // and set search query in search params
-   if (!currentPath.startsWith("/result")) {
-     navigate(`/result`);
-     setSearchParams({ query: suggestion });
+   if (!currentPath.startsWith("/results")) {
+     navigate(`results`);
+     setSearchParams({ search_query: suggestion });
    } else {
      // If current path starts with "/result", only set search query in search params
-     setSearchParams({ query: suggestion });
+     setSearchParams({ search_query: suggestion });
    }
  }
 

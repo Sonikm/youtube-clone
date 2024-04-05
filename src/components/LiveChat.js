@@ -55,7 +55,7 @@ function LiveChat({ setIsShowChats }) {
   return (
     <form
       onSubmit={(e) => handleSubmit(e)}
-      className=" font-semibold dark:scrollbar-dark  flex overflow-hidden flex-col justify-center items-center rounded-lg  border border-gray-300 dark:border-[--secondary] dark:text-white rounded-b-3xl "
+      className="w-[450px]  font-semibold dark:scrollbar-dark  flex overflow-hidden flex-col justify-center items-center rounded-lg  border border-gray-300 dark:border-[--secondary] dark:text-white rounded-b-3xl "
     >
       <div className="  font-semibold w-full px-3  p-2 flex justify-between items-center  border-b border-gray-300 dark:border-[--secondary] dark:text-white">
         <span>Live Chats</span>

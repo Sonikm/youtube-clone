@@ -9,7 +9,7 @@ function SidebarVideos() {
   if (!searchVideoList?.length) return;
 
   return (
-    <div className="flex gap-2 flex-col p-4">
+    <div className="flex gap-2  flex-col p-4">
       {searchVideoList.map((video) => (
         <Link to={`/watch?v=${video?.id?.videoId}`} key={video?.id?.videoId}>
           <Video videoInfo={video?.snippet} videoId={video?.id?.videoId} />
@@ -31,10 +31,10 @@ function Video({ videoInfo, onClick, videoId }) {
   return (
     <div
       onClick={onClick}
-      className="flex w-[500px] justify-start cursor-pointer"
+      className="flex w-[450px] xl:w-[600px] md:w-[450px] sm:w-[400px] xs:w-[350px] justify-start cursor-pointer sm:text-sm"
     >
       <img
-        className="rounded-xl w-44 h-28"
+        className="rounded-xl w-44 h-28 sm:w-40 sm:h-26"
         src={thumbnails?.medium?.url}
         alt=""
       />

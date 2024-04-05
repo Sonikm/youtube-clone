@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CommentsBox from "./CommentsBox";
 import VideoDescription from "./VideoDescription";
 import VideoTitle from "./VideoTitle";
@@ -6,6 +6,8 @@ import VideoTabs from "./VideoTabs";
 import useVideoAdditionalData from "../hooks/useVideoAdditionalData";
 
 function VideoCardData({ videoId, channelId, videoPlayData }) {
+  const [isShowComments, setIsShowComments] = useState(false);
+
   const {
     videoLikeViewsAndCommentsData,
     videoUserProfilePhoto,
@@ -34,7 +36,7 @@ function VideoCardData({ videoId, channelId, videoPlayData }) {
   const { commentCount, likeCount, viewCount } = videoLikeViewsAndCommentsData;
 
   return (
-    <div className="flex flex-col gap-4 py-4 dark:text-white w-[745px]">
+    <div className="flex flex-col gap-4 py-4 dark:text-white  lg:w-full">
       <VideoTitle title={title} />
       <VideoTabs
         videoUserProfilePhoto={videoUserProfilePhoto}
@@ -43,12 +45,14 @@ function VideoCardData({ videoId, channelId, videoPlayData }) {
         subscriberCount={subscriberCount}
       />
       <VideoDescription
+        setIsShowComments={setIsShowComments}
+        isShowComments={isShowComments}
         viewCount={viewCount}
         publishedAt={publishedAt}
         description={description}
         localized={localized}
       />
-      <CommentsBox commentCount={commentCount} videoId={videoId} />
+        <CommentsBox isShowComments={isShowComments} commentCount={commentCount} videoId={videoId} />
     </div>
   );
 }

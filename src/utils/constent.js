@@ -1,5 +1,5 @@
 //* Video key
-export const API_KEY = "AIzaSyDWn_ifb4DlDtIhTZDtL9m_Y0EEdvEI9pM";
+// export const API_KEY = "AIzaSyDWn_ifb4DlDtIhTZDtL9m_Y0EEdvEI9pM";
 // export const API_KEY = "AIzaSyD7sZPHCDxgctQIR75KTO2JsN4ba6fMuEM";
 // export const API_KEY = "AIzaSyCX55kqbiFuiohqzwCsHVmuKgrvt--5juo";
 // export const API_KEY = "AIzaSyB3_o_wwmXTVhsEgP_2Uu7DreU4Rm7B8XU";
@@ -7,7 +7,7 @@ export const API_KEY = "AIzaSyDWn_ifb4DlDtIhTZDtL9m_Y0EEdvEI9pM";
 // export const API_KEY = "AIzaSyDR0BODtKuDfovbvB4Pt5PQt_Sp9b3WuF4";
 // export const API_KEY = "AIzaSyBHhc1J_vCgN9lZAlGJFxBJJAPC7x8wLsc";
 // export const API_KEY = "AIzaSyArEyZc2xGw6GE2IwII6KVOnsaHsA8weVw";
-// export const API_KEY = "AIzaSyBWXmXt8i5rHOm4lNl7T8uZWqtx1h4ye8s";
+export const API_KEY = "AIzaSyBWXmXt8i5rHOm4lNl7T8uZWqtx1h4ye8s";
 // export const API_KEY = "AIzaSyDgDHmW-AxSZbIjaiJdaMVRH8xNa5HAwfE";
 // export const videoCategory_api = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&maxResults=100`;
 export const CATEGORIES_DATA_API = `https://www.googleapis.com/youtube/v3/videoCategories?key=${API_KEY}&regionCode=IN`;

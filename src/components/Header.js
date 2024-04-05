@@ -25,7 +25,7 @@ function Header() {
   const path = window.location.pathname;
   console.log(path)
   return (
-    <div className="flex flex-col sm:px-3  p-2  px-6 fixed top-0 left-0 bg-white dark:bg-black  w-full ">
+    <div className="flex flex-col sm:px-3  p-2 z-30  px-6 fixed top-0 left-0 bg-white dark:bg-black  w-full ">
       <div className="flex gap-5 xs:gap-3 items-center justify-between dark:bg-black ">
         <div className={`${isSearch ? "md:hidden " : ""} flex gap-6 sm:gap-4 dark:gap-2 flex-nowrap items-center col-span-1 `}>
           <ToggleSidebar />
@@ -55,7 +55,7 @@ function Header() {
         </div>
       </div>
       {path === '/' ? (
-        <div className=" ml-10  sm:ml-0 sm:px-2 sm:gap-2  px-10 py-4 flex gap-4 overflow-x-scroll no-scrollbar  ">
+        <div className=" ml-10  md:ml-0 md:px-0 sm:gap-2  px-10 py-4 flex gap-4 overflow-x-scroll no-scrollbar  ">
           <ButtonList />
         </div>
       ) : null}

@@ -13,7 +13,7 @@ function SearchVideoListContainer() {
   }
 
   return (
-    <div className="pr-20 flex flex-col gap-4">
+    <div className="pr-20 flex flex-col gap-4 xs:gap-8">
       {searchVideoList.map((video) => (
         <Link to={`/watch?v=${video?.id?.videoId}`} key={video?.id?.videoId}>
           <VideoResultCard

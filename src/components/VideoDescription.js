@@ -5,13 +5,20 @@ import {
   formatText,
 } from "../utils/helper";
 
-function VideoDescription({ description, publishedAt, viewCount }) {
+function VideoDescription({ description, publishedAt, viewCount, setIsShowComments, isShowComments }) {
   const [isExpandDescipton, setIsExpandDescription] = useState(false);
 
   // Render formatted description
   const renderDescription = () => {
     return formatText(description);
   };
+
+  function handleExpand(){
+    setIsShowComments(!isShowComments);
+    setIsExpandDescription(!isExpandDescipton)
+    console.log(isShowComments)
+
+  }
 
   return (
     <div
@@ -27,7 +34,7 @@ function VideoDescription({ description, publishedAt, viewCount }) {
           {renderDescription()}
         </p>
         <p
-          onClick={() => setIsExpandDescription(!isExpandDescipton)}
+          onClick={() => handleExpand()}
           className="font-bold cursor-pointer whitespace-nowrap"
         >
           {isExpandDescipton ? "Show less" : "more"}

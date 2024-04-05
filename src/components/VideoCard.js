@@ -8,11 +8,10 @@ function VideoCard({videoInfo, videoId}) {
  if(!videoLikeViewsAndCommentsData ) return;
 
  const {commentCount, favoriteCount, likeCount, viewCount} = videoLikeViewsAndCommentsData;
-//  console.log(channelId);
 
   return (
-    <div className='flex flex-col flex-1 justify-start gap-4 xl:w-[300px] md:w-[240px]  w-[380px] sm:w-[200px] xs:w-[300px] 2xs:w-[200px]'>
-      <img className='rounded-xl ' src={thumbnails?.medium?.url} alt=''/>
+    <div className='flex flex-col flex-1 justify-start gap-4 xl:w-[300px] md:w-[300px]  w-[400px] sm:w-[250px] xs:w-[350px] 2xs:w-[200px]'>
+      <img className='rounded-xl hover:rounded-none hover:scale-[1.02]  z-10 ease-out duration-300 ' src={thumbnails?.maxres?.url} alt=''/>
       <div className='flex gap-2 sm:text-sm'>
        {/* <UserAvatar/> */}
        <img className="w-6 h-6 cursor-pointer rounded-full" src={videoUserProfilePhoto} alt=''/>
