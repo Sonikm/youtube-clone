@@ -1,7 +1,7 @@
 import React from "react";
 import useTheme from "../contexts/ThemeContext";
 
-function ToggleTheme() {
+function ToggleTheme({isSearch}) {
   const { themeMode, darkTheme, lightTheme } = useTheme();
 
   function onChangeTheme(e) {
@@ -20,7 +20,7 @@ function ToggleTheme() {
     <input
       onChange={onChangeTheme}
       id="toggle"
-      className="toggle"
+      className={`${isSearch ? " md:hidden " : " "}  toggle `}
       type="checkbox"
       checked={themeMode === "dark"}
     />

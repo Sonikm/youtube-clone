@@ -11,8 +11,10 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { showSuggetions } from "../utils/appSlice";
 import clearIcon from "../assets/clear_icon.svg";
 import clearIconDark from "../assets/clear_icon_dark.svg";
+import leftArrow from '../assets/left-arrow.svg';
+import leftArrowDark from "../assets/left-arrow-dark.svg";
 
-function SearchBar() {
+function SearchBar({ onHandleSearchbar, isSearch }) {
   // Fetching theme mode from ThemeContext
   const { themeMode } = useTheme();
 
@@ -83,26 +85,42 @@ function SearchBar() {
   return (
     <form
       ref={formRef}
-      className="flex col-span-3 gap-4 relative "
+      className={`${
+        isSearch ? " justify-center items-center  md:flex-1  " : "md:hidden "
+      } flex  gap-4 relative flex-1 max-w-[650px]  `}
       onSubmit={handleSubmitForm}
       onFocus={() => toggleSuggestions(true)}
     >
-      <div className="flex flex-col ">
-        <div className="border border-gray-300 w-[560px]   dark:border-gray-800  flex-1 flex rounded-3xl overflow-hidden relative ">
+      <div  onClick={() => onHandleSearchbar(false)} className={`${isSearch ? " md:scale-100  " : "   "} scale-0 flex  flex-none  rounded-full w-10 h-10  xs:w-8 xs:h-8 justify-center items-center cursor-pointer`}>
+        <img className="w-6 xs:w-5"
+         
+          src={themeMode === "dark" ? leftArrowDark : leftArrow}
+          alt=""
+        />
+      </div>
+
+      <div className="flex flex-col w-full ">
+        <div
+          className={`${
+            isSearch ? "md:flex-1   " : "     "
+          } border border-gray-300  max-w:w-[560px] xs:w-[250px]  dark:border-gray-800 flex-1 flex rounded-3xl overflow-hidden relative`}
+        >
           <input
             ref={inputRef}
             value={query}
             onChange={(e) => handleVideoSearch(e.target.value)}
-            className="flex-1 relative dark:focus:border-blue-500 dark:text-white dark:placeholder:text-gray-400  dark:border-gray-800  dark:bg-black  focus:border-blue-600 border-[1px] 	 outline-none border-gray-300 px-6  rounded-full rounded-r-none"
+            className="flex-1 relative dark:focus:border-blue-500 dark:text-white dark:placeholder:text-gray-400  dark:border-gray-800 sm:text-sm xs:h-9 dark:bg-black h-10   focus:border-blue-600 border-[1px]	 outline-none border-gray-300 px-6  rounded-full rounded-r-none"
             type="text"
             placeholder="Search"
             onBlur={() => showSuggetions(false)} // Hide suggestions when input loses focus
             onFocus={() => showSuggetions(true)} // Show suggestions when input is focused
           />
           {query !== "" && (
-            <button className={`w-10 h-10 flex justify-center items-center absolute hover:bg-gray-200 rounded-full right-20 top-0 dark:hover:bg-[--primaryGrayDark] `}>
+            <button
+              className={`w-10 h-10 flex justify-center xs:h-9 items-center absolute hover:bg-gray-200 rounded-full right-20 xs:right-5 top-0 dark:hover:bg-[--primaryGrayDark] `}
+            >
               <img
-                className="w-8 h-8"
+                className="w-8 h-8 sm:h-6 sm:w-6"
                 onClick={() => dispatch(searchQuery(""))}
                 src={themeMode === "dark" ? clearIconDark : clearIcon}
                 alt=""
@@ -112,7 +130,7 @@ function SearchBar() {
 
           <button
             type="Search"
-            className="p-2   dark:bg-[#222222]  px-6  border-gray-300 bg-gray-100"
+            className="p-2 xs:h-9 flex-none xs:hidden dark:bg-[#222222]  px-6 xs:px-2 border-gray-300 bg-gray-100"
           >
             <img
               className="w-5"
@@ -125,10 +143,10 @@ function SearchBar() {
         {/* Render suggestions if showSuggestions is true */}
       </div>
 
-      <div className="bg-gray-200 dark:bg-[#222222]  rounded-full w-10 h-10 flex justify-center items-center cursor-pointer">
+      <div className="bg-gray-200 dark:bg-[#222222] flex-none xs:h-9 rounded-full w-10 h-10 flex justify-center items-center cursor-pointer">
         <img
-          className="w-6"
-          src={themeMode === "dark" ? micIconDark : micIcon}
+          className=" xs:h-5"
+          src={themeMode === "light" ? micIcon : micIconDark}
           alt="mic"
         />
       </div>

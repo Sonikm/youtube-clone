@@ -15,7 +15,7 @@ function ToggleSidebar() {
   }
 
   return (
-    <div className="hover:bg-gray-300 dark:hover:bg-[#272727]  ease-out duration-100 rounded-full p-2 cursor-pointer">
+    <div className="hover:bg-gray-300 dark:hover:bg-[#272727] -ml-1  ease-out duration-100 rounded-full p-2 cursor-pointer">
       <img
         onClick={handleToggleSidebar}
         src={themeMode === "dark" ? hambugerIconDark : hambugerIcon}

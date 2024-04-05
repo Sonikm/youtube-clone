@@ -37,11 +37,11 @@ function Suggestion({ suggestion }) {
       className="flex items-center gap-2 font-semibold hover:bg-gray-200 dark:hover:bg-[#333333] dark:text-white cursor-pointer p-2 rounded-lg"
     >
       <img
-        className="w-4"
+        className="w-4 xs:w-3"
         src={themeMode === "dark" ? searchIconDark : searchIcon}
         alt=""
       />
-      <p>{suggestion}</p>
+      <p className="line-clamp-1 sm:text-xs">{suggestion}</p>
     </li>
   );
 }

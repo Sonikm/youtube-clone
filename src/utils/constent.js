@@ -8,6 +8,7 @@ export const API_KEY = "AIzaSyDWn_ifb4DlDtIhTZDtL9m_Y0EEdvEI9pM";
 // export const API_KEY = "AIzaSyBHhc1J_vCgN9lZAlGJFxBJJAPC7x8wLsc";
 // export const API_KEY = "AIzaSyArEyZc2xGw6GE2IwII6KVOnsaHsA8weVw";
 // export const API_KEY = "AIzaSyBWXmXt8i5rHOm4lNl7T8uZWqtx1h4ye8s";
+// export const API_KEY = "AIzaSyDgDHmW-AxSZbIjaiJdaMVRH8xNa5HAwfE";
 // export const videoCategory_api = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&maxResults=100`;
 export const CATEGORIES_DATA_API = `https://www.googleapis.com/youtube/v3/videoCategories?key=${API_KEY}&regionCode=IN`;
 
