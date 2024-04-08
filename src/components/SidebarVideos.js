@@ -3,10 +3,11 @@ import useSearchVideoList from "../hooks/useSearchVideoList";
 import { Link } from "react-router-dom";
 import { formatPublishedVideo, formatViews } from "../utils/helper";
 import useVideoAdditionalData from "../hooks/useVideoAdditionalData";
+import SidebarShimmer from "./ui/SidebarShimmer";
 
 function SidebarVideos() {
   const { searchVideoList } = useSearchVideoList();
-  if (!searchVideoList?.length) return;
+  if (!searchVideoList?.length) return <SidebarShimmer />;
 
   return (
     <div className="flex gap-2  flex-col p-4">
