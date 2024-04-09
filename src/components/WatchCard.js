@@ -10,8 +10,8 @@ function WatchCard() {
   const { videoPlayData } = usePlayVideoData(videoId);
   if (!videoPlayData) return <WatchVideoShimmer />;
   return (
-    <div className=" max-w-[800px]  lg:w-full pr-10">
-      <div className="flex justify-center  flex-1 overflow-hidden mr-10 md:w-[600px] w-[760px] sm:w-[400px] sm:h-[250px] lg:w-[650px] xs:w-[300px] xs:h-[150px] h-[400px] md:h-[350px]">
+    <div className=" max-w-[800px]  lg:w-full pr-5">
+      <div className="flex justify-center  flex-1 overflow-hidden md:w-[600px] w-[720px] sm:w-[400px] sm:h-[250px] lg:w-[650px] xs:w-[300px] xs:h-[150px] h-[420px] md:h-[350px]">
         <iframe
           className="rounded-xl flex-1 "
           src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}

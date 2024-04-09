@@ -6,11 +6,13 @@ import Body from "./components/Body";
 import WatchPage from "./pages/WatchPage";
 import SearchVideoListContainer from './pages/SearchVideoListContainer';
 import ChannelView from './pages/ChannelView';
+import PageNotFound from './pages/PageNotFound';
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Body />,
+      errorElement: <PageNotFound/>,
       children: [
         {
           path: "/",

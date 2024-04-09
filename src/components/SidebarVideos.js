@@ -32,7 +32,7 @@ function Video({ videoInfo, onClick, videoId }) {
   return (
     <div
       onClick={onClick}
-      className="flex w-[450px] xl:w-[600px] md:w-[450px] sm:w-[400px] xs:w-[350px] justify-start cursor-pointer sm:text-sm"
+      className="flex w-[420px] xl:w-[600px] md:w-[450px] sm:w-[400px] xs:w-[350px] justify-start cursor-pointer sm:text-sm"
     >
       <img
         className="rounded-xl w-44 h-28 sm:w-40 sm:h-26"

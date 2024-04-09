@@ -36,7 +36,7 @@ function VideoCardData({ videoId, channelId, videoPlayData }) {
   const { commentCount, likeCount, viewCount } = videoLikeViewsAndCommentsData;
 
   return (
-    <div className="flex flex-col gap-4 py-4 dark:text-white  lg:w-full">
+    <div className="flex flex-col gap-4 py-4 dark:text-white  lg:w-full md:w-[600px] w-[720px]  sm:w-[400px]  xs:w-[300px] ">
       <VideoTitle title={title} />
       <VideoTabs
         videoUserProfilePhoto={videoUserProfilePhoto}

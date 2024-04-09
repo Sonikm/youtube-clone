@@ -1,14 +1,5 @@
 //* Video key
-// export const API_KEY = "AIzaSyDWn_ifb4DlDtIhTZDtL9m_Y0EEdvEI9pM";
-export const API_KEY = "AIzaSyD7sZPHCDxgctQIR75KTO2JsN4ba6fMuEM";
-// export const API_KEY = "AIzaSyCX55kqbiFuiohqzwCsHVmuKgrvt--5juo";
-// export const API_KEY = "AIzaSyB3_o_wwmXTVhsEgP_2Uu7DreU4Rm7B8XU";
-// export const API_KEY = "AIzaSyDg7RCJbZ5fk51Da1ROAhTjm1KWD8LGyqs";
-// export const API_KEY = "AIzaSyDR0BODtKuDfovbvB4Pt5PQt_Sp9b3WuF4";
-// export const API_KEY = "AIzaSyBHhc1J_vCgN9lZAlGJFxBJJAPC7x8wLsc";
-// export const API_KEY = "AIzaSyArEyZc2xGw6GE2IwII6KVOnsaHsA8weVw";
-// export const API_KEY = "AIzaSyBWXmXt8i5rHOm4lNl7T8uZWqtx1h4ye8s";
-// export const API_KEY = "AIzaSyDgDHmW-AxSZbIjaiJdaMVRH8xNa5HAwfE";
+export const API_KEY = "AIzaSyBHhc1J_vCgN9lZAlGJFxBJJAPC7x8wLsc";
 // export const videoCategory_api = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&maxResults=100`;
 export const CATEGORIES_DATA_API = `https://www.googleapis.com/youtube/v3/videoCategories?key=${API_KEY}&regionCode=IN`;
 
@@ -53,38 +44,3 @@ export const CHANNEL_INFO = `https://www.googleapis.com/youtube/v3/channels?part
 //* Channel video
 //https://www.googleapis.com/youtube/v3/search?key=AIzaSyDg7RCJbZ5fk51Da1ROAhTjm1KWD8LGyqs&channelId=UC2bNrKQbJLphxNCd6BSnTkA&part=snippet,id&order=date&maxResults=20
 
-
-// https://www.googleapis.com/youtube/v3/channels?part=brandingSettings&id=UCebC4x5l2-PQxg46Ucv9CsA&key=AIzaSyCX55kqbiFuiohqzwCsHVmuKgrvt--5juo
-//https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&allThreadsRelatedToChannelId=UCvrhwpnp2DHYQ1CbXby9ypQ&key=AIzaSyD7sZPHCDxgctQIR75KTO2JsN4ba6fMuEM
-//https://www.googleapis.com/youtube/v3/channels?id=UC_pmwSxVDPmD_XzxrG-zgqg&key=AIzaSyD7sZPHCDxgctQIR75KTO2JsN4ba6fMuEM&part=contentDetails
-//https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU_pmwSxVDPmD_XzxrG-zgqg&key=AIzaSyD7sZPHCDxgctQIR75KTO2JsN4ba6fMuEM&part=snippet&maxResults=50
-
-// export const SEARCH_VIDEO_API = `https://youtube.googleapis.com/youtube/v3/search?key=${API_KEY}&q=hindi`;
-//https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&type=video&key=AIzaSyDg7RCJbZ5fk51Da1ROAhTjm1KWD8LGyqs&q=hindi
-//https://www.googleapis.com/youtube/v3/commentThreads?key=AIzaSyD7sZPHCDxgctQIR75KTO2JsN4ba6fMuEM&textFormat=plainText&part=snippet&videoId=Hup0XqyfuDU&maxResults=100
-//https://www.googleapis.com/youtube/v3/videos?part=id%2C+snippet&id=4Y4YSpF6d6w&key=AIzaSyDg7RCJbZ5fk51Da1ROAhTjm1KWD8LGyqs
-//https://stackoverflow.com/questions/18953499/youtube-api-to-fetch-all-videos-on-a-channel
-//https://www.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=IN&key=AIzaSyDg7RCJbZ5fk51Da1ROAhTjm1KWD8LGyqs
-
-// view and like count api => https://www.googleapis.com/youtube/v3/videos?part=statistics&id=dNM0CPtZJoA&key=AIzaSyDg7RCJbZ5fk51Da1ROAhTjm1KWD8LGyqs
-// subscribe count ==> https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UC68nKdrLbLL0Vj7ilVkLmmg&key=AIzaSyD7sZPHCDxgctQIR75KTO2JsN4ba6fMuEM
-//https://www.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=IN&key=AIzaSyDg7RCJbZ5fk51Da1ROAhTjm1KWD8LGyqs
-
-export const buttonList = [
-  "All",
-  "Music",
-  "Programming",
-  "Dance",
-  "Comedy",
-  "Coding",
-  "Mixes",
-  "Live",
-  "Computer",
-  "Sales",
-  "Recently uploaded",
-  "React",
-  "Movies",
-  "Story",
-  "Blogs",
-  "Weddings",
-];
