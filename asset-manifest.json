@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/youtube-clone/static/css/main.8c4f4167.css",
-    "main.js": "/youtube-clone/static/js/main.0f979c9c.js",
+    "main.css": "/youtube-clone/static/css/main.ff59d73e.css",
+    "main.js": "/youtube-clone/static/js/main.7379a685.js",
+    "static/media/pageNotFound.png": "/youtube-clone/static/media/pageNotFound.aa837b0888e83cb143b0.png",
     "static/media/user.png": "/youtube-clone/static/media/user.d54b5cea3dabfb92c990.png",
     "static/media/user.jpg": "/youtube-clone/static/media/user.2b1e746c2768565f55e8.jpg",
     "static/media/youtube-logo.svg": "/youtube-clone/static/media/youtube-logo.64a6a33a8560e1e3e82d649d6640558d.svg",
@@ -93,11 +94,11 @@
     "static/media/hamburger-icon-dark.svg": "/youtube-clone/static/media/hamburger-icon-dark.f73268124930534d448588e08ea2b490.svg",
     "static/media/show-more.svg": "/youtube-clone/static/media/show-more.cab64b1d296c534dd476f1476604ad77.svg",
     "static/media/hamburger-icon.svg": "/youtube-clone/static/media/hamburger-icon.fe6a5ce63d96577f65c4c773ae72c54a.svg",
-    "main.8c4f4167.css.map": "/youtube-clone/static/css/main.8c4f4167.css.map",
-    "main.0f979c9c.js.map": "/youtube-clone/static/js/main.0f979c9c.js.map"
+    "main.ff59d73e.css.map": "/youtube-clone/static/css/main.ff59d73e.css.map",
+    "main.7379a685.js.map": "/youtube-clone/static/js/main.7379a685.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c4f4167.css",
-    "static/js/main.0f979c9c.js"
+    "static/css/main.ff59d73e.css",
+    "static/js/main.7379a685.js"
   ]
 }
