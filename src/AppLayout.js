@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         },
       ],
     },
-  ]);
+  ], {basename: '/youtube-clone'});
 
 function AppLayout() {
   return (
