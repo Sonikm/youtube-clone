@@ -54,7 +54,7 @@ function Header() {
           <img className={` ${isSearch ? " md:hidden  " : " "} rounded-full w-8 xs:w-6 `} src={user} alt=""/>
         </div>
       </div>
-      {path === '/youtube-clone/' ? (
+      {path === '/youtube-clone' ? (
         <div className=" ml-10  md:ml-0 md:px-0 sm:gap-2  px-10 py-4 flex gap-4 overflow-x-scroll no-scrollbar  ">
           <ButtonList />
         </div>

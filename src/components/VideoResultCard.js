@@ -5,13 +5,10 @@ import useVideoAdditionalData from "../hooks/useVideoAdditionalData";
 
 function VideoResultCard({ videoInfo, onClick,videoId }) {
   const { title, thumbnails, channelTitle, description,publishedAt , channelId} = videoInfo;
-  console.log(videoInfo);
-
+  
   const { videoLikeViewsAndCommentsData, videoUserProfilePhoto } =
     useVideoAdditionalData(videoId, channelId);
   if (!videoLikeViewsAndCommentsData || !videoUserProfilePhoto) return;
-  console.log(thumbnails);
-
 
   return (
     <div onClick={onClick} className="flex max-w-[1200px] justify-start cursor-pointer xs:flex-col xs:gap-2">

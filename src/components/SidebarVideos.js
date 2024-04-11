@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import { formatPublishedVideo, formatViews } from "../utils/helper";
 import useVideoAdditionalData from "../hooks/useVideoAdditionalData";
 import SidebarShimmer from "./ui/SidebarShimmer";
+import useYtVideoList from "../hooks/useYtVideoList";
 
 function SidebarVideos() {
-  const { searchVideoList } = useSearchVideoList();
-  if (!searchVideoList?.length) return <SidebarShimmer />;
+  const { videoList } = useYtVideoList();
+  if (!videoList?.length) return <SidebarShimmer />;
 
   return (
     <div className="flex gap-2  flex-col p-4">
-      {searchVideoList.map((video) => (
+      {videoList.map((video) => (
         <Link to={`/watch?v=${video?.id?.videoId}`} key={video?.id?.videoId}>
           <Video videoInfo={video?.snippet} videoId={video?.id?.videoId} />
         </Link>

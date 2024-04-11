@@ -8,16 +8,17 @@ export default function useSearchVideoList() {
     const [searchVideoList, setSearchVideoList] = useState([]);
     const [searchParams] = useSearchParams();
     const query = searchParams.get("query");
-    const category = useSelector(store => store.category.category);
+    const videoQuery = useSelector(store => store.search.query);
+    console.log(query)
 
   useEffect(() => {
     async function getData() {
-      const data = await fetchData(SEARCH_VIDEO_LIST_API + (query || category));
+      const data = await fetchData(SEARCH_VIDEO_LIST_API + (query || videoQuery));
       setSearchVideoList(data?.items);
     }
 
     getData();
-  }, [query, category]);
+  }, [query, videoQuery]);
   
   return {searchVideoList};
 }

@@ -18,7 +18,7 @@ function VideoSuggestionsSidebar() {
           >
             Show Live Chats
           </button>
-          <div className="flex gap-2 ml-4 overflow-y-scroll no-scrollbar">
+          <div className="flex gap-2 ml-4 overflow-y-scroll no-scrollbar w-[800px] ">
             <ButtonList />
           </div>
           <SidebarVideos />

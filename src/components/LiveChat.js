@@ -66,7 +66,7 @@ function LiveChat({ setIsShowChats }) {
           <img src={themeMode === 'dark' ? clearIconDark : clearIcon} alt="" />
         </div>
       </div>
-      <div className="w-full h-[450px] border  flex flex-col justify-end dark:border-[--secondary] dark:text-white ">
+      <div className="w-full h-[430px] border  flex flex-col justify-end dark:border-[--secondary] dark:text-white ">
         <div className="flex  gap-2  p-4 px-6 overflow-y-scroll flex-col-reverse ">
           {liveChats.map((user, index) => (
             <Chat user={user} key={index} />

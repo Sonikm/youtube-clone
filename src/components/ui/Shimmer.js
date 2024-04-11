@@ -2,7 +2,7 @@ import React from "react";
 
 function Shimmer() {
   return (
-    <div className="flex flex-wrap gap-10 sm:justify-center ">
+    <div className="flex flex-wrap gap-10 sm:justify-center  ">
       {Array.from(Array(20), (_, index) => (
         <ShimmerBox key={index} />
       ))}
