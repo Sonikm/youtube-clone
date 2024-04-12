@@ -72,7 +72,7 @@ function SearchBar({ onHandleSearchbar, isSearch }) {
         navigate("/results");
       }
       // Set search params and hide suggestions when the form is submitted
-      setSearchParams({ query: query });
+      setSearchParams({ search_query: query });
       toggleSuggestions(false);
     }
   }

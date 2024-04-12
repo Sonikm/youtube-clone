@@ -7,11 +7,11 @@ function VideoCard({videoInfo, videoId}) {
  const { videoLikeViewsAndCommentsData, videoUserProfilePhoto} = useGetVideoViewsAndLikeCountData(videoId, channelId);
  if(!videoLikeViewsAndCommentsData ) return;
 
- const {commentCount, favoriteCount, likeCount, viewCount} = videoLikeViewsAndCommentsData;
+ const { viewCount} = videoLikeViewsAndCommentsData;
 
   return (
     <div className='flex flex-col  overflow-hidden justify-start gap-4  max-w-[400px] flex-1'>
-      <img className='rounded-xl hover:rounded-none hover:scale-[1.02]  z-10 ease-out duration-300 ' src={thumbnails?.maxres?.url} alt=''/>
+      <img className='rounded-xl hover:rounded-none hover:scale-[1.02]  z-10 ease-out duration-300 ' src={thumbnails?.maxres?.url || thumbnails?.medium?.url} alt=''/>
       <div className='flex gap-2 sm:text-sm'>
        {/* <UserAvatar/> */}
        <img className="w-8 sm:w-6 h-8 sm:h-6 cursor-pointer rounded-full" src={videoUserProfilePhoto} alt=''/>

@@ -9,15 +9,13 @@ export default function useYtVideoList() {
 
   useEffect(() => {
     async function getData() {
-      // if(category === 'All'){
-      //   const data = await fetchData(YT_VIDEO_LIST_API);
-      //   setVideoList(data?.items);
-      // }else {
-      //   const data = await fetchData(SEARCH_VIDEO_LIST_API + category);
-      //   setVideoList(data?.items);
-      // }
-      const data = await fetchData(SEARCH_VIDEO_LIST_API + category);
-      setVideoList(data?.items);
+      if(category === 'All'){
+        const data = await fetchData(YT_VIDEO_LIST_API);
+        setVideoList(data?.items);
+      }else {
+        const data = await fetchData(SEARCH_VIDEO_LIST_API + category);
+        setVideoList(data?.items);
+      }
     }
 
     getData();

@@ -1,18 +1,17 @@
 import React from "react";
-import useSearchVideoList from "../hooks/useSearchVideoList";
 import { Link } from "react-router-dom";
 import { formatPublishedVideo, formatViews } from "../utils/helper";
 import useVideoAdditionalData from "../hooks/useVideoAdditionalData";
 import SidebarShimmer from "./ui/SidebarShimmer";
-import useYtVideoList from "../hooks/useYtVideoList";
+import useSidebarVideos from "../hooks/useSidebarVideos";
 
 function SidebarVideos() {
-  const { videoList } = useYtVideoList();
-  if (!videoList?.length) return <SidebarShimmer />;
+  const { sidebarVideosList } = useSidebarVideos();
+  if (!sidebarVideosList?.length) return <SidebarShimmer />;
 
   return (
     <div className="flex gap-2  flex-col p-4">
-      {videoList.map((video) => (
+      {sidebarVideosList.map((video) => (
         <Link to={`/watch?v=${video?.id?.videoId}`} key={video?.id?.videoId}>
           <Video videoInfo={video?.snippet} videoId={video?.id?.videoId} />
         </Link>
@@ -23,7 +22,7 @@ function SidebarVideos() {
 
 export default SidebarVideos;
 
-function Video({ videoInfo, onClick, videoId }) {
+function Video({ videoInfo, videoId }) {
   const { title, thumbnails, publishedAt, channelId, channelTitle } = videoInfo;
 
   const { videoLikeViewsAndCommentsData, videoUserProfilePhoto } =
@@ -32,7 +31,6 @@ function Video({ videoInfo, onClick, videoId }) {
 
   return (
     <div
-      onClick={onClick}
       className="flex w-[420px] xl:w-[600px] md:w-[450px] sm:w-[400px] xs:w-[350px] justify-start cursor-pointer sm:text-sm"
     >
       <img
