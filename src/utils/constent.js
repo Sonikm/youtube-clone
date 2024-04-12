@@ -1,5 +1,5 @@
 //* Video key
-export const API_KEY = "AIzaSyDWn_ifb4DlDtIhTZDtL9m_Y0EEdvEI9pM";
+export const API_KEY = "AIzaSyDR0BODtKuDfovbvB4Pt5PQt_Sp9b3WuF4";
 
 export const SIDEBAR_VIDEOS_API = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&type=video&maxResults=100`;
 export const CATEGORIES_DATA_API = `https://www.googleapis.com/youtube/v3/videoCategories?key=${API_KEY}&regionCode=IN`;
