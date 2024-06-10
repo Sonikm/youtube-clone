@@ -40,8 +40,7 @@ export const VIDEO_COMMENTS = `https://www.googleapis.com/youtube/v3/commentThre
 //* Channel video and banner
 
 // export const CHANNEL_VIEW_BANNER = `https://www.googleapis.com/youtube/v3/channels?part=brandingSettings&key=${API_KEY}&id=UCebC4x5l2-PQxg46Ucv9CsA`
-export const CHANNEL_INFO = `https://www.googleapis.com/youtube/v3/channels?part=brandingSettings,snippet,statistics&key=${API_KEY}&id=UCebC4x5l2-PQxg46Ucv9CsA`
+export const CHANNEL_INFO = `https://www.googleapis.com/youtube/v3/channels?part=brandingSettings,snippet,statistics&key=${API_KEY}&id=UCebC4x5l2-PQxg46Ucv9CsA`;
 
 //* Channel video
 //https://www.googleapis.com/youtube/v3/search?key=AIzaSyDg7RCJbZ5fk51Da1ROAhTjm1KWD8LGyqs&channelId=UC2bNrKQbJLphxNCd6BSnTkA&part=snippet,id&order=date&maxResults=20
-

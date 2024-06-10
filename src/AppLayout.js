@@ -1,22 +1,33 @@
-import React from 'react'
-import { RouterProvider } from 'react-router-dom';
+import React from "react";
+import { RouterProvider } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 import VideoContainer from "./components/VideoContainer";
 import Body from "./components/Body";
 import WatchPage from "./pages/WatchPage";
-import SearchVideoListContainer from './pages/SearchVideoListContainer';
-import ChannelView from './pages/ChannelView';
-import PageNotFound from './pages/PageNotFound';
+import SearchVideoListContainer from "./pages/SearchVideoListContainer";
+import ChannelView from "./pages/ChannelView";
+import PageNotFound from "./pages/PageNotFound";
+import SignUp from "./pages/SignUpPage";
+import Register from "./pages/Register";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
     {
       path: "/",
       element: <Body />,
-      errorElement: <PageNotFound/>,
+      errorElement: <PageNotFound />,
       children: [
         {
           path: "/",
           element: <VideoContainer />,
+        },
+        {
+          path: "/signUp",
+          element: <SignUp />,
+        },
+        {
+          path: "/register",
+          element: <Register/>,
         },
         {
           path: "/watch",
@@ -24,16 +35,16 @@ const router = createBrowserRouter([
         },
         {
           path: "/results",
-          element: <SearchVideoListContainer/>
+          element: <SearchVideoListContainer />,
         },
       ],
     },
-  ], {basename: '/youtube-clone'});
+  ],
+  { basename: "/youtube-clone" }
+);
 
 function AppLayout() {
-  return (
-    <RouterProvider router={router} />
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default AppLayout
+export default AppLayout;

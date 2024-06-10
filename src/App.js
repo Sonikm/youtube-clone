@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { Provider } from "react-redux";
 import AppLayout from "./AppLayout";
-import store from "./utils/store";
+import { useFirebase } from "./contexts/firebase";
+import Register from "./pages/Register";
 
 function App() {
   const [themeMode, setThemeMode] = useState("light");
+  const firebase = useFirebase();
 
   const darkTheme = () => {
     setThemeMode("dark");
@@ -20,14 +21,14 @@ function App() {
     document.querySelector("html").classList.add(themeMode);
   }, [themeMode]);
 
+  if (firebase.user === null) return <Register />;
+
   return (
-    <Provider store={store}>
-      <ThemeProvider value={{ darkTheme, lightTheme, themeMode }}>
-        <div className="App dark:bg-black min-h-screen overflow-hidden w-full relative">
-         <AppLayout/>
-        </div>
-      </ThemeProvider>
-    </Provider>
+    <ThemeProvider value={{ darkTheme, lightTheme, themeMode }}>
+      <div className="App dark:bg-black min-h-screen overflow-hidden w-full relative">
+        <AppLayout />
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -6,6 +6,7 @@ const appSlice = createSlice({
     isOpenSidebar: false,
     suggestions: true,
     isVisible: true,
+    isShowSettings: false, 
   },
   reducers: {
     toggleSidebar: (state) => {
@@ -17,8 +18,11 @@ const appSlice = createSlice({
     toggleElements: (state, action) => {
       state.isVisible = action.payload;
     },
+    toggleSettings: (state) => {
+      state.isShowSettings = !state.isShowSettings;
+    }
   },
 });
 
-export const { toggleSidebar, showSuggetions, toggleElements } = appSlice.actions;
+export const { toggleSidebar, showSuggetions, toggleElements , toggleSettings} = appSlice.actions;
 export default appSlice.reducer;
