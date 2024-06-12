@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/youtube-clone/static/css/main.ed84e698.css",
-    "main.js": "/youtube-clone/static/js/main.37db8ba7.js",
+    "main.css": "/youtube-clone/static/css/main.eea8a174.css",
+    "main.js": "/youtube-clone/static/js/main.77ea4b6a.js",
     "static/media/pageNotFound.png": "/youtube-clone/static/media/pageNotFound.aa837b0888e83cb143b0.png",
     "static/media/user.png": "/youtube-clone/static/media/user.d54b5cea3dabfb92c990.png",
     "static/media/user.jpg": "/youtube-clone/static/media/user.2b1e746c2768565f55e8.jpg",
@@ -9,6 +9,7 @@
     "static/media/logo-dark.svg": "/youtube-clone/static/media/logo-dark.f3efc27e7937b77c7cc3ab57e3fb2824.svg",
     "static/media/youtube-premium-dark.svg": "/youtube-clone/static/media/youtube-premium-dark.c89134eb47eadd5dd945ae66943c1c86.svg",
     "static/media/youtube-premium.svg": "/youtube-clone/static/media/youtube-premium.c89134eb47eadd5dd945ae66943c1c86.svg",
+    "static/media/google_logo.svg": "/youtube-clone/static/media/google_logo.efa560d32653a615a1db742bbf78c815.svg",
     "static/media/youtube-kid-dark.svg": "/youtube-clone/static/media/youtube-kid-dark.1e3fb968543d000c17627a37971f2956.svg",
     "static/media/youtube-kid.svg": "/youtube-clone/static/media/youtube-kid.1e3fb968543d000c17627a37971f2956.svg",
     "static/media/settings-dark.svg": "/youtube-clone/static/media/settings-dark.b15933c518d36af1629c1b986057b315.svg",
@@ -94,11 +95,11 @@
     "static/media/hamburger-icon-dark.svg": "/youtube-clone/static/media/hamburger-icon-dark.f73268124930534d448588e08ea2b490.svg",
     "static/media/show-more.svg": "/youtube-clone/static/media/show-more.cab64b1d296c534dd476f1476604ad77.svg",
     "static/media/hamburger-icon.svg": "/youtube-clone/static/media/hamburger-icon.fe6a5ce63d96577f65c4c773ae72c54a.svg",
-    "main.ed84e698.css.map": "/youtube-clone/static/css/main.ed84e698.css.map",
-    "main.37db8ba7.js.map": "/youtube-clone/static/js/main.37db8ba7.js.map"
+    "main.eea8a174.css.map": "/youtube-clone/static/css/main.eea8a174.css.map",
+    "main.77ea4b6a.js.map": "/youtube-clone/static/js/main.77ea4b6a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed84e698.css",
-    "static/js/main.37db8ba7.js"
+    "static/css/main.eea8a174.css",
+    "static/js/main.77ea4b6a.js"
   ]
 }
