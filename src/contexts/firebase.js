@@ -38,7 +38,7 @@ export const FirebaseProvider = (props) => {
     onAuthStateChanged(firebaseAuth, (user) => {
       if (user) {
         setUser(user);
-        console.log(user);
+        // console.log(user);
       } else {
         console.log("You are logged out");
         setUser(null);

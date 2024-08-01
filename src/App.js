@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import AppLayout from "./AppLayout";
-import { useFirebase } from "./contexts/firebase";
-import Register from "./pages/Register";
 
 function App() {
   const [themeMode, setThemeMode] = useState("light");
-  const firebase = useFirebase();
 
   const darkTheme = () => {
     setThemeMode("dark");
@@ -21,7 +18,6 @@ function App() {
     document.querySelector("html").classList.add(themeMode);
   }, [themeMode]);
 
-  if (firebase.user === null) return <Register />;
 
   return (
     <ThemeProvider value={{ darkTheme, lightTheme, themeMode }}>

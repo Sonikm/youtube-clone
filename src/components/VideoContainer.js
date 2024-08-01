@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toggleElements } from "../utils/appSlice";
 import Shimmer from "./ui/Shimmer";
-import { YT_VIDEO_LIST_API } from "../utils/constent";
-import InfiniteScroll from "react-infinite-scroll-component";
 
 function VideoContainer() {
   const { videoList} = useYtVideoList();
